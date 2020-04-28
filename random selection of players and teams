@@ -1,0 +1,61 @@
+import random 
+import pandas as pd
+
+n1= input('Enter player name: ')
+n2= input('Enter player name: ')
+n3= input('Enter player name: ')
+n4= input('Enter player name: ')
+n5= input('Enter player name: ')
+n6= input('Enter player name: ')
+n7= input('Enter player name: ')
+n8= input('Enter player name: ')
+n9= input('Enter player name: ')
+n10= input('Enter player name: ')
+names = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10]
+random.shuffle(names)
+print(names)
+
+def divide_chunks(l, n):  
+    for i in range(0, len(l), n):  
+        yield l[i:i + n] 
+  
+# How many elements each 
+n = 5
+  
+x = list(divide_chunks(names, n)) 
+print(x)
+
+t1 = input('team 1: ')
+t2 = input('team 2: ')
+t3 = input('team 3: ')
+t4 = input('team 4: ')
+t5 = input('team 5: ')
+t6 = input('team 6: ')
+t7 = input('team 7: ')
+t8 = input('team 8: ')
+t9 = input('team 9: ')
+t10 = input('team 10: ')
+teams = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10]
+random.shuffle(teams)
+print(teams)
+
+def divide_chunks2(l, n):  
+    for i in range(0, len(l), n):  
+        yield l[i:i + n] 
+  
+# How many elements each 
+n = 5
+  
+y = list(divide_chunks2(teams, n)) 
+print(y)
+
+df=pd.DataFrame(names)
+dt=pd.DataFrame(teams)
+dt.insert(1, 'Names', names)
+print(dt)
+
+random.shuffle(teams)
+random.shuffle(names)
+print(x)
+print(y)
+print(dt)
